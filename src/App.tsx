@@ -10,6 +10,7 @@ import Video from './components/sections/video'
 import { Wedding } from '@models/wedding'
 
 import { useEffect, useState } from 'react'
+import ImageGallery from './components/sections/ImageGallery'
 const cx = classNames.bind(styles)
 
 function App() {
@@ -51,12 +52,13 @@ function App() {
     return null
   }
 
-  const { date } = wedding
+  const { date, galleryImages } = wedding
 
   return (
     <div className={cx('container')}>
       <Heading date={date} />
       <Video />
+      <ImageGallery images={galleryImages} />
       {JSON.stringify(wedding)}
     </div>
   )
